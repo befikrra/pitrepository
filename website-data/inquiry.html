@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIT GTB Garh - Papers & Syllabus Support</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header></header>
+   
+    <!-- ==================== PAPER/SYLLABUS INQUIRY ==================== -->
+    <div id="support-section" class="container inquiry-container">
+        <div class="breadcrumb">
+            <a href="home.html">Home</a> → <span>Papers Support</span>
+        </div>
+        
+        <div class="section-header">
+            <h2><i class="fas fa-file-pdf"></i> Papers & Syllabus Support</h2>
+            <p>Can't find specific papers? Missing syllabus? Report issues - Our team will fix within 24 hours! 📚</p>
+        </div>
+
+        <div id="message-container" class="message-container"></div>
+
+        <form id="support-form" class="inquiry-form">
+            <!-- Student Info -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Your Name *</label>
+                    <input type="text" id="student-name" required maxlength="100" placeholder="Enter your full name">
+                    <span class="input-icon"><i class="fas fa-user"></i></span>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-phone"></i> Mobile Number(for quick reply) *</label>
+                    <input type="tel" id="phone" required maxlength="10" placeholder="+91 98765-43210" pattern="[6-9][0-9]{9}">
+                    <span class="input-icon"><i class="fas fa-phone"></i></span>
+                </div>
+            </div>
+
+            <!-- Branch & Semester -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-laptop-code"></i> Your Branch *</label>
+                    <select id="branch" required>
+                        <option value="">Select Branch</option>
+                        <option value="CSE">CSE (Computer Science)</option>
+                        <option value="EE">EE (Electrical Engineering)</option>
+                        <option value="BCA">BCA</option>
+                        <option value="B.COM">B.Com</option>
+                        <option value="BBA">BBA</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span class="input-icon"><i class="fas fa-laptop-code"></i></span>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-alt"></i> Semester/Year *</label>
+                    <select id="semester" required>
+                        <option value="">Select Semester</option>
+                        <option value="Sem 1">Semester 1</option>
+                        <option value="Sem 2">Semester 2</option>
+                        <option value="Sem 3">Semester 3</option>
+                        <option value="Sem 4">Semester 4</option>
+                        <option value="Sem 5">Semester 5</option>
+                        <option value="Sem 6">Semester 6</option>
+                        <option value="Sem 7">Semester 7</option>
+                        <option value="Sem 8">Semester 8</option>
+                    </select>
+                    <span class="input-icon"><i class="fas fa-calendar-alt"></i></span>
+                </div>
+            </div>
+
+            <!-- Replace the issue-type-grid section with this -->
+<div class="form-group full-width">
+    <label><i class="fas fa-exclamation-triangle"></i> Issue Type *</label>
+    <div class="issue-type-grid">
+        <!-- Missing Paper -->
+        <label class="issue-card">
+            <input type="radio" name="issue-type" value="missing-paper" required>
+            <div>
+                <div class="issue-icon">
+                    <i class="fas fa-file-missing"></i>
+                </div>
+                <h4>Missing Paper</h4>
+                <p>"Sem 3 DSA paper not found"</p>
+            </div>
+        </label>
+
+        <!-- Broken Link -->
+        <label class="issue-card">
+            <input type="radio" name="issue-type" value="broken-link">
+            <div>
+                <div class="issue-icon">
+                    <i class="fas fa-link-slash"></i>
+                </div>
+                <h4>Broken Link</h4>
+                <p>"CSE Sem 5 link not working"</p>
+            </div>
+        </label>
+
+        <!-- Missing Syllabus -->
+        <label class="issue-card">
+            <input type="radio" name="issue-type" value="missing-syllabus">
+            <div>
+                <div class="issue-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h4>Missing Syllabus</h4>
+                <p>"Need EE Sem 4 syllabus"</p>
+            </div>
+        </label>
+
+        <!-- Wrong File -->
+        <label class="issue-card">
+            <input type="radio" name="issue-type" value="wrong-file">
+            <div>
+                <div class="issue-icon">
+                    <i class="fas fa-file-excel"></i>
+                </div>
+                <h4>Wrong File</h4>
+                <p>"Got wrong subject paper"</p>
+            </div>
+        </label>
+
+        <!-- Other -->
+        <label class="issue-card">
+            <input type="radio" name="issue-type" value="other">
+            <div>
+                <div class="issue-icon">
+                    <i class="fas fa-question"></i>
+                </div>
+                <h4>Other Issue</h4>
+                <p>Any other problem</p>
+            </div>
+        </label>
+    </div>
+</div>
+
+            <!-- Specific Details -->
+            <div class="form-group full-width">
+                <label><i class="fas fa-search"></i> Specific Subject/Paper Name</label>
+                <input type="text" id="subject" placeholder="Ex: DSA, DBMS, Circuits, Microprocessor...">
+                <span class="input-icon"><i class="fas fa-search"></i></span>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group full-width">
+                <label><i class="fas fa-comment"></i> Describe Your Issue *<br>
+                    <small>(What exactly is missing/not working?)</small>
+                </label>
+                <textarea id="description" rows="5" required 
+                    placeholder="Example: 'CSE Sem 3 2022 paper is missing. I clicked the link but it shows 404 error. Please upload it urgently for my exam tomorrow.'"
+                    maxlength="800"></textarea>
+                <span class="input-icon"><i class="fas fa-comment"></i></span>
+            </div>
+
+            <!-- Submit -->
+            <div class="form-actions">
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">
+                        <i class="fas fa-paper-plane"></i>
+                        Report Issue
+                    </span>
+                    <span class="btn-loading" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        Reporting...
+                    </span>
+                </button>
+            </div>
+        </form>
+
+        <!-- Quick Stats -->
+        <div class="support-stats">
+            <div class="stat-item">
+                <i class="fas fa-bolt"></i>
+                <div>
+                    <h4>24 hrs</h4>
+                    <p>Fix Time</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                    <h4>Faster</h4>
+                    <p>Issues Resolved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin & AI buttons (same as before) -->
+    <div class="admin-panel">
+        <button class="admin-btn" onclick="adminLogin()" title="Admin Login">
+            <i class="fas fa-key"></i> <span class="admin-text">Admin</span>
+        </button>
+    </div>
+
+    <div class="ai-panel">
+        <button class="ai-btn" onclick="toggleAIChat()" title="🤖 AI Help">
+            <i class="fas fa-robot"></i> <span class="ai-text">AI</span>
+        </button>
+    </div>
+
+    <!-- Footer (same as main page) -->
+    <footer class="main-footer">
+        <!-- Your footer content -->
+    </footer>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('support-form');
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = document.getElementById('submitBtn');
+                const btnText = submitBtn.querySelector('.btn-text');
+                const btnLoading = submitBtn.querySelector('.btn-loading');
+                
+                // Loading state
+                submitBtn.disabled = true;
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'inline-flex';
+
+                const ticketId = 'SUPPORT-' + Date.now();
+                const issueType = document.querySelector('input[name="issue-type"]:checked')?.value || 'Not specified';
+                const currentTime = new Date().toLocaleString();
+
+                // Student data
+                const inquiryData = {
+                    Timestamp: currentTime,
+                    Ticket_ID: ticketId,
+                    Name: document.getElementById('student-name').value,
+                    Phone: document.getElementById('phone').value,
+                    Branch: document.getElementById('branch').value,
+                    Semester: document.getElementById('semester').value,
+                    Issue_Type: issueType,
+                    Subject: document.getElementById('subject').value || "N/A",
+                    Description: document.getElementById('description').value
+                };
+
+                // Web3Forms payload (Gmail ke liye)
+                const emailPayload = {
+                    access_key: "e24a3637-4caa-4dc2-ac0c-29232d865667",
+                    subject: `New Ticket: ${ticketId} - ${inquiryData.Branch}`,
+                    from_name: "PIT GTB Support Portal",
+                    ...inquiryData
+                };
+
+                try {
+                    // 1. Google Sheets me save karna
+                    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwBAs9iBJB0qEUwwUY162CSk-D9NcspZwIbg-WgP5HSJsI9BdvW4ka9NErviSpsb3pcwg/exec"; // <-- Yahan apna /exec wala URL paste karein
+
+                    const saveToSheet = fetch(GOOGLE_SCRIPT_URL, {
+                        method: "POST",
+                        mode: "no-cors",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(inquiryData)
+                    });
+
+                    // 2. Email alert bhejna
+                    const sendEmail = fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Accept: "application/json"
+                        },
+                        body: JSON.stringify(emailPayload)
+                    });
+
+                    // Dono request ek sath execute hongi
+                    await Promise.all([saveToSheet, sendEmail]);
+
+                    showMessage(`✅ Ticket #${ticketId} created successfully!<br>Our team will fix this within 24 hours. We'll WhatsApp you! 📱`, 'success');
+                    form.reset();
+
+                } catch (error) {
+                    showMessage(`❌ Submission error. Please try again.`, 'error');
+                } finally {
+                    submitBtn.disabled = false;
+                    btnText.style.display = 'inline-flex';
+                    btnLoading.style.display = 'none';
+                }
+            });
+
+            // Clean Phone Input (Random digits issue fix)
+            document.getElementById('phone').addEventListener('input', function(e) {
+                this.value = this.value.replace(/\D/g, '').slice(0, 10);
+            });
+
+            function showMessage(html, type) {
+                document.getElementById('message-container').innerHTML = `
+                    <div class="alert alert-${type}">
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+                        ${html}
+                        <button class="close-alert" onclick="this.parentElement.remove()">×</button>
+                    </div>
+                `;
+            }
+        });
+
+        // Admin login
+        function adminLogin() {
+            const pass = prompt("Admin Password:");
+            if (pass === "ROOPROOP") {
+                alert("✅ Admin Access!\nAb saara data aapki Google Sheet aur Gmail inbox me direct save ho raha hai.");
+            }
+        }
+    </script>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="bottom-content">
+                <span>&copy; 2026 PIT GTB Garh. All Rights Reserved </span>
+            </div>
+        </div>
+</footer>
+</body>
+</html>
